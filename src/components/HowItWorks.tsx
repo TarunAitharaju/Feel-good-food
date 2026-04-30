@@ -19,7 +19,7 @@ const STEPS = [
 export function HowItWorks() {
   return (
     <section className="mx-auto max-w-[900px] px-5 py-16 md:px-10">
-      <h2 className="font-display text-ink mb-12 text-center text-3xl font-normal">
+      <h2 className="mb-12 text-center font-display text-3xl font-bold text-ink">
         How it works
       </h2>
 
@@ -27,16 +27,15 @@ export function HowItWorks() {
         {STEPS.map((step) => (
           <div
             key={step.num}
-            className="glass flex w-full max-w-[280px] flex-1 flex-col gap-2.5 rounded-card px-6 py-7 shadow-glass-md"
-            style={{ minWidth: "240px" }}
+            className="flex w-full max-w-[280px] min-w-[240px] flex-1 flex-col gap-2.5 rounded-card border border-black/[0.08] bg-white px-6 py-7 shadow-card"
           >
-            <span className="font-display text-3xl font-light leading-none text-forest">
+            <span className="font-display text-3xl font-bold leading-none text-orange">
               {step.num}
             </span>
-            <h3 className="font-display text-ink text-lg font-medium">
+            <h3 className="font-display text-lg font-semibold text-ink">
               {step.title}
             </h3>
-            <p className="text-ink-dim text-sm leading-relaxed">{step.desc}</p>
+            <p className="text-sm leading-relaxed text-ink-dim">{step.desc}</p>
           </div>
         ))}
       </div>

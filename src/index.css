@@ -1,117 +1,153 @@
-/* ─── Google Fonts — must be first ─── */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Tiro+Telugu&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --hero-bg:          #2C4A35;
-  --hero-bg-deep:     #1A3828;
-  --page-bg:          #FFFFFF;
-  --page-bg-alt:      #F5F5F3;
-  --orange:           #E8601C;
-  --orange-hover:     #C44E14;
-  --ink:              #1A1A1A;
-  --ink-dim:          #555550;
-  --ink-muted:        #9A9A90;
-  --card-bg:          #FFFFFF;
-  --card-border:      rgba(0,0,0,0.08);
-
-  /* Glass — white frosted, for use ON dark green */
-  --glass-bg:         rgba(255,255,255,0.12);
-  --glass-blur:       20px;
-  --glass-border:     rgba(255,255,255,0.18);
-
-  --radius-card:      16px;
-  --radius-card-lg:   24px;
-  --radius-card-xl:   32px;
-}
-
 /* ─── Base ─── */
-*, *::before, *::after { box-sizing: border-box; }
+@layer base {
 
-html {
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-}
-
-body {
-  font-family: "Poppins", system-ui, sans-serif;
-  color: var(--ink);
-  background: var(--page-bg);
-  min-height: 100vh;
-}
-
-@layer utilities {
-  /* Frosted glass — use on dark green sections */
-  .glass {
-    background: var(--glass-bg);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
-    border: 1px solid var(--glass-border);
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
   }
 
-  /* Stronger frosted for hero card */
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: "Poppins", system-ui, sans-serif;
+    color: #1a1a1a;
+    background: #ffffff;
+    min-height: 100vh;
+  }
+}
+
+/* ─── Component Classes ─── */
+@layer components {
+  /* Hero background — single element, no stacking divs */
+
+  .nav {
+    background: linear-gradient(135deg, #56625c, #1a3828, #07180f);
+  }
+
+  .hero-bg {
+    background: linear-gradient(135deg, #07180f, #1a3828, #56625c);
+    /* background-image:
+      linear-gradient(to bottom, rgba(26, 56, 40, 0.40), rgba(26, 56, 40, 0.85)),
+      url("https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=1600&q=80"); */
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* Frosted glass card — white-tinted blur on dark bg */
   .glass-card {
-    background: rgba(255,255,255,0.13);
+    background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(28px);
     -webkit-backdrop-filter: blur(28px);
-    border: 1px solid rgba(255,255,255,0.22);
+    border: 1px solid rgba(255, 255, 255, 0.20);
+  }
+
+  /* Glass for generic dark sections */
+  .glass {
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
   }
 
   .glass-heavy {
-    background: rgba(255,255,255,0.16);
+    background: rgba(255, 255, 255, 0.16);
     backdrop-filter: blur(32px);
     -webkit-backdrop-filter: blur(32px);
-    border: 1px solid rgba(255,255,255,0.20);
+    border: 1px solid rgba(255, 255, 255, 0.20);
   }
 
-  /* White cards — for content sections on white bg */
-  .card-white {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  .glass-dark {
+    background: rgba(26, 56, 40, 0.92);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
-  /* Buttons */
+  /* Orange CTA button */
   .btn-orange {
-    background: var(--orange);
-    color: #fff;
+    background-color: #e8601c;
+    color: #ffffff;
     box-shadow: none;
-    transition: background 200ms ease;
-  }
-  .btn-orange:hover {
-    background: var(--orange-hover);
+    transition: background-color 200ms ease;
   }
 
+  .btn-orange:hover {
+    background-color: #c44e14;
+  }
+
+  /* Ghost button on dark backgrounds */
   .btn-ghost-white {
     background: transparent;
-    color: #fff;
-    border: 1.5px solid rgba(255,255,255,0.55);
+    color: #ffffff;
+    border: 1.5px solid rgba(255, 255, 255, 0.50);
     transition: all 200ms ease;
   }
-  .btn-ghost-white:hover {
-    background: rgba(255,255,255,0.10);
-    border-color: rgba(255,255,255,0.85);
-  }
 
-  /* Text aliases */
-  .text-on-hero     { color: #FFFFFF; }
-  .text-on-hero-dim { color: rgba(255,255,255,0.65); }
-  .text-orange      { color: var(--orange); }
-  .text-ink         { color: var(--ink); }
-  .text-ink-dim     { color: var(--ink-dim); }
-  .text-ink-muted   { color: var(--ink-muted); }
-  .text-forest      { color: var(--hero-bg); }
-  .text-terra       { color: var(--orange); }
-  .bg-forest        { background-color: var(--hero-bg); }
-  .bg-cream-light   { background-color: var(--page-bg); }
-  .border-glass     { border-color: var(--glass-border); }
+  .btn-ghost-white:hover {
+    background: rgba(255, 255, 255, 0.10);
+    border-color: rgba(255, 255, 255, 0.80);
+  }
 }
 
-.transition-ambient { transition: all 200ms ease; }
+/* ─── Utility overrides ─── */
+@layer utilities {
+  .text-ink {
+    color: #1a1a1a;
+  }
 
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--hero-bg); border-radius: 9999px; }
+  .text-ink-dim {
+    color: #555550;
+  }
+
+  .text-ink-muted {
+    color: #9a9a90;
+  }
+
+  .text-forest {
+    color: #2c4a35;
+  }
+
+  .text-orange {
+    color: #e8601c;
+  }
+
+  .text-terra {
+    color: #e8601c;
+  }
+
+  .bg-forest {
+    background-color: #2c4a35;
+  }
+
+  .bg-cream-light {
+    background-color: #ffffff;
+  }
+}
+
+/* ─── Transition helper ─── */
+.transition-ambient {
+  transition: all 200ms ease;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2c4a35;
+  border-radius: 9999px;
+}

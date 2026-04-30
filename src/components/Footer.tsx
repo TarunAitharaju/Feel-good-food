@@ -29,27 +29,22 @@ const FOOTER_COLUMNS = [
 
 export function Footer() {
   return (
-    <footer className="mx-auto mt-16 max-w-[960px] border-t border-forest/10 px-5 pb-8 pt-12 md:px-10">
+    <footer className="mx-auto mt-16 max-w-[960px] border-t border-black/[0.08] px-5 pb-8 pt-12 md:px-10">
       <div className="flex flex-wrap justify-between gap-8">
-        {/* Brand */}
         <div>
-          <Link
-            to="/"
-            className="font-display text-ink text-xl font-normal italic"
-          >
-            ann<span className="text-forest">am</span>
+          <Link to="/" className="font-display text-xl font-bold text-ink">
+            annam<span className="text-orange">.</span>
           </Link>
-          <p className="text-ink-dim mt-2 max-w-[240px] text-[0.8125rem] leading-relaxed">
+          <p className="mt-2 max-w-[240px] text-[0.8125rem] leading-relaxed text-ink-dim">
             Home-cooked Andhra meals, delivered to your neighborhood.
             Richardson, TX.
           </p>
         </div>
 
-        {/* Link columns */}
         <div className="flex flex-wrap gap-12">
           {FOOTER_COLUMNS.map((col) => (
             <div key={col.title}>
-              <h4 className="text-ink-muted mb-2.5 text-[0.6875rem] font-bold uppercase tracking-widest">
+              <h4 className="mb-2.5 text-[0.6875rem] font-bold uppercase tracking-widest text-ink-muted">
                 {col.title}
               </h4>
               <div className="flex flex-col gap-1.5">
@@ -57,7 +52,7 @@ export function Footer() {
                   <Link
                     key={link.label}
                     to={link.to}
-                    className="text-ink-dim text-[0.8125rem] transition-ambient hover:text-ink"
+                    className="text-[0.8125rem] text-ink-dim transition-ambient hover:text-ink"
                   >
                     {link.label}
                   </Link>
@@ -68,8 +63,7 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Bottom bar */}
-      <div className="text-ink-muted mt-8 border-t border-forest/8 pt-5 text-xs">
+      <div className="mt-8 border-t border-black/[0.08] pt-5 text-xs text-ink-muted">
         Texas Cottage Food compliant · Every cook personally vetted
       </div>
     </footer>
