@@ -7,27 +7,25 @@
 
 /* ─── Design Tokens (Caprese palette) ─── */
 :root {
-  --cream: #FDEDD6;
-  --cream-light: #FFF6E8;
-  --cream-dark: #F5DDB8;
-  --forest: #3D5926;
-  --forest-mid: #5A7A3D;
-  --forest-light: #8AAB6E;
-  --forest-deep: #2E4319;
-  --gold: #FDD365;
-  --gold-light: #FEEABC;
-  --orange: #FC8F00;
-  --terra: #AE150D;
-  --ink: #1f1a15;
-  --ink-dim: #6b5e50;
-  --ink-muted: #9e8e7a;
+  --cream: #F5F0E8;        /* was #FDEDD6 — cooler off-white */
+  --cream-light: #FAF7F2;  /* was #FFF6E8 */
+  --cream-dark: #EDE7DB;   /* was #F5DDB8 */
+  --forest: #1A3828;       /* was #3D5926 — much deeper green */
+  --forest-mid: #2C5440;   /* was #5A7A3D */
+  --forest-light: #4A8060; /* was #8AAB6E */
+  --forest-deep: #112618;  /* was #2E4319 */
+  --gold: #FDD365;         /* unchanged */
+  --gold-light: #FEEABC;   /* unchanged */
+  --orange: #E8601C;       /* was #FC8F00 — Foodly orange */
+  --terra: #E8601C;        /* was #AE150D — use same orange as primary accent */
+  --ink: #1A1A1A;          /* was #1f1a15 — cleaner near-black */
+  --ink-dim: #5A5048;      /* was #6b5e50 */
+  --ink-muted: #9A8E82;    /* was #9e8e7a */
 
-  /* Glass surfaces — warm ivory glass */
-  --glass-bg: rgba(253, 237, 214, 0.58);
-  --glass-blur: 12px;
-  --glass-border: rgba(61, 89, 38, 0.10);
+  --glass-bg: rgba(245, 240, 232, 0.62);
+  --glass-blur: 20px;
+  --glass-border: rgba(26, 56, 40, 0.14);
 
-  /* Radii */
   --radius-card: 20px;
   --radius-card-lg: 28px;
   --radius-card-xl: 32px;
@@ -35,21 +33,21 @@
 }
 
 .dark {
-  --cream: #1a1612;
-  --cream-light: #211c17;
-  --cream-dark: #15110d;
-  --ink: #FDEDD6;
-  --ink-dim: #F5DDB8;
-  --ink-muted: #9e8e7a;
-  --forest: #6E9E5A;
-  --forest-mid: #8AAB6E;
-  --gold: #FDD365;
-  --orange: #FDAA40;
-  --terra: #D44A2A;
+  --cream: #111A15;         /* was #1a1612 — deep green-black */
+  --cream-light: #172010;   /* was #211c17 */
+  --cream-dark: #0D1410;    /* was #15110d */
+  --ink: #F5F0E8;           /* was #FDEDD6 */
+  --ink-dim: #C8C0B0;       /* was #F5DDB8 */
+  --ink-muted: #8A8278;     /* was #9e8e7a */
+  --forest: #4A8060;        /* was #6E9E5A — lifted for dark bg */
+  --forest-mid: #5A9070;    /* was #8AAB6E */
+  --gold: #FDD365;          /* unchanged */
+  --orange: #F07840;        /* was #FDAA40 — slightly lifted */
+  --terra: #F07840;         /* was #D44A2A */
 
-  --glass-bg: rgba(26, 22, 18, 0.85);
-  --glass-blur: 14px;
-  --glass-border: rgba(253, 237, 214, 0.06);
+  --glass-bg: rgba(17, 26, 21, 0.90);
+  --glass-blur: 24px;
+  --glass-border: rgba(245, 240, 232, 0.08);
 }
 
 /* ─── Base ─── */

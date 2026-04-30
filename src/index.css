@@ -1,133 +1,50 @@
+/* ─── Google Fonts — must be first ─── */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Tiro+Telugu&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ─── Google Fonts ─── */
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=DM+Sans:wght@400;500;600;700&family=Tiro+Telugu&display=swap");
-
-/* ─── Design Tokens (Caprese palette) ─── */
 :root {
-  --cream: #FDEDD6;
-  --cream-light: #FFF6E8;
-  --cream-dark: #F5DDB8;
-  --forest: #3D5926;
-  --forest-mid: #5A7A3D;
-  --forest-light: #8AAB6E;
-  --forest-deep: #2E4319;
-  --gold: #FDD365;
-  --gold-light: #FEEABC;
-  --orange: #FC8F00;
-  --terra: #AE150D;
-  --ink: #1f1a15;
-  --ink-dim: #6b5e50;
-  --ink-muted: #9e8e7a;
+  --hero-bg:          #2C4A35;
+  --hero-bg-deep:     #1A3828;
+  --page-bg:          #FFFFFF;
+  --page-bg-alt:      #F5F5F3;
+  --orange:           #E8601C;
+  --orange-hover:     #C44E14;
+  --ink:              #1A1A1A;
+  --ink-dim:          #555550;
+  --ink-muted:        #9A9A90;
+  --card-bg:          #FFFFFF;
+  --card-border:      rgba(0,0,0,0.08);
 
-  /* Glass surfaces — warm ivory glass */
-  --glass-bg: rgba(253, 237, 214, 0.62);
-  --glass-blur: 20px;
-  --glass-border: rgba(61, 89, 38, 0.14);
+  /* Glass — white frosted, for use ON dark green */
+  --glass-bg:         rgba(255,255,255,0.12);
+  --glass-blur:       20px;
+  --glass-border:     rgba(255,255,255,0.18);
 
-  /* Radii */
-  --radius-card: 20px;
-  --radius-card-lg: 28px;
-  --radius-card-xl: 32px;
-  --radius-pill: 9999px;
-}
-
-.dark {
-  --cream: #1a1612;
-  --cream-light: #211c17;
-  --cream-dark: #15110d;
-  --ink: #FDEDD6;
-  --ink-dim: #F5DDB8;
-  --ink-muted: #9e8e7a;
-  --forest: #6E9E5A;
-  --forest-mid: #8AAB6E;
-  --gold: #FDD365;
-  --orange: #FDAA40;
-  --terra: #D44A2A;
-
-  --glass-bg: rgba(26, 22, 18, 0.88);
-  --glass-blur: 24px;
-  --glass-border: rgba(253, 237, 214, 0.08);
+  --radius-card:      16px;
+  --radius-card-lg:   24px;
+  --radius-card-xl:   32px;
 }
 
 /* ─── Base ─── */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+*, *::before, *::after { box-sizing: border-box; }
 
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  font-family: "DM Sans", system-ui, sans-serif;
+  font-family: "Poppins", system-ui, sans-serif;
   color: var(--ink);
-  background: var(--cream-light);
+  background: var(--page-bg);
   min-height: 100vh;
-  position: relative;
 }
 
-/* ─── Ambient Background Gradients ─── */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  pointer-events: none;
-  background: radial-gradient(
-      ellipse 80% 60% at 15% 10%,
-      rgba(61, 89, 38, 0.08) 0%,
-      transparent 60%
-    ),
-    radial-gradient(
-      ellipse 60% 50% at 85% 85%,
-      rgba(138, 171, 110, 0.1) 0%,
-      transparent 55%
-    ),
-    radial-gradient(
-      ellipse 50% 40% at 50% 50%,
-      rgba(252, 143, 0, 0.04) 0%,
-      transparent 60%
-    );
-}
-
-.dark body::before {
-  background: radial-gradient(
-      ellipse 80% 60% at 15% 10%,
-      rgba(61, 89, 38, 0.12) 0%,
-      transparent 60%
-    ),
-    radial-gradient(
-      ellipse 60% 50% at 85% 85%,
-      rgba(110, 158, 90, 0.08) 0%,
-      transparent 55%
-    ),
-    radial-gradient(
-      ellipse 50% 40% at 50% 50%,
-      rgba(252, 143, 0, 0.06) 0%,
-      transparent 60%
-    );
-}
-
-/* ─── Film Grain Noise Overlay ─── */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  opacity: 0.035;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-/* ─── Utility Classes ─── */
 @layer utilities {
+  /* Frosted glass — use on dark green sections */
   .glass {
     background: var(--glass-bg);
     backdrop-filter: blur(var(--glass-blur));
@@ -135,86 +52,66 @@ body::after {
     border: 1px solid var(--glass-border);
   }
 
-  .glass-heavy {
-    background: rgba(253, 237, 214, 0.78);
+  /* Stronger frosted for hero card */
+  .glass-card {
+    background: rgba(255,255,255,0.13);
     backdrop-filter: blur(28px);
     -webkit-backdrop-filter: blur(28px);
-    border: 1px solid rgba(61, 89, 38, 0.1);
+    border: 1px solid rgba(255,255,255,0.22);
   }
 
-  .dark .glass-heavy {
-    background: rgba(26, 22, 18, 0.92);
-    border: 1px solid rgba(253, 237, 214, 0.06);
+  .glass-heavy {
+    background: rgba(255,255,255,0.16);
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
+    border: 1px solid rgba(255,255,255,0.20);
   }
 
-  .glass-dark {
-    background: rgba(26, 22, 18, 0.92);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(250, 243, 224, 0.1);
+  /* White cards — for content sections on white bg */
+  .card-white {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
   }
 
-  .grain {
-    position: relative;
+  /* Buttons */
+  .btn-orange {
+    background: var(--orange);
+    color: #fff;
+    box-shadow: none;
+    transition: background 200ms ease;
+  }
+  .btn-orange:hover {
+    background: var(--orange-hover);
   }
 
-  .grain::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    opacity: 0.04;
-    pointer-events: none;
-    border-radius: inherit;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  .btn-ghost-white {
+    background: transparent;
+    color: #fff;
+    border: 1.5px solid rgba(255,255,255,0.55);
+    transition: all 200ms ease;
+  }
+  .btn-ghost-white:hover {
+    background: rgba(255,255,255,0.10);
+    border-color: rgba(255,255,255,0.85);
   }
 
-  .edge-fade-bottom {
-    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-  }
-
-  .text-ink {
-    color: var(--ink);
-  }
-  .text-ink-dim {
-    color: var(--ink-dim);
-  }
-  .text-ink-muted {
-    color: var(--ink-muted);
-  }
-  .text-forest {
-    color: var(--forest);
-  }
-  .text-gold {
-    color: var(--gold);
-  }
-  .text-terra {
-    color: var(--terra);
-  }
-  .bg-cream {
-    background-color: var(--cream);
-  }
-  .bg-cream-light {
-    background-color: var(--cream-light);
-  }
-  .border-glass {
-    border-color: var(--glass-border);
-  }
+  /* Text aliases */
+  .text-on-hero     { color: #FFFFFF; }
+  .text-on-hero-dim { color: rgba(255,255,255,0.65); }
+  .text-orange      { color: var(--orange); }
+  .text-ink         { color: var(--ink); }
+  .text-ink-dim     { color: var(--ink-dim); }
+  .text-ink-muted   { color: var(--ink-muted); }
+  .text-forest      { color: var(--hero-bg); }
+  .text-terra       { color: var(--orange); }
+  .bg-forest        { background-color: var(--hero-bg); }
+  .bg-cream-light   { background-color: var(--page-bg); }
+  .border-glass     { border-color: var(--glass-border); }
 }
 
-/* ─── Transitions ─── */
-.transition-ambient {
-  transition: all 200ms ease;
-}
+.transition-ambient { transition: all 200ms ease; }
 
-/* ─── Scrollbar ─── */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: var(--ink-muted);
-  border-radius: 9999px;
-}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--hero-bg); border-radius: 9999px; }
