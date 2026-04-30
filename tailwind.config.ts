@@ -46,22 +46,26 @@ export default {
         "card-xl": "32px",
       },
       boxShadow: {
-        glass: "0 2px 8px rgba(31,26,21,0.10), 0 1px 2px rgba(31,26,21,0.06)",
+        /* Neutral glass shadows — tighter, less spread */
+        glass:
+          "0 1px 4px rgba(31,26,21,0.08), 0 1px 2px rgba(31,26,21,0.04)",
         "glass-md":
-          "0 4px 16px rgba(31,26,21,0.10), 0 2px 4px rgba(31,26,21,0.08)",
+          "0 2px 8px rgba(31,26,21,0.08), 0 1px 3px rgba(31,26,21,0.05)",
         "glass-lg":
-          "0 8px 32px rgba(31,26,21,0.12), 0 4px 8px rgba(31,26,21,0.08)",
+          "0 4px 16px rgba(31,26,21,0.09), 0 2px 4px rgba(31,26,21,0.05)",
         "glass-xl":
-          "0 16px 48px rgba(31,26,21,0.16), 0 4px 12px rgba(31,26,21,0.10)",
+          "0 8px 24px rgba(31,26,21,0.10), 0 2px 6px rgba(31,26,21,0.06)",
+        /* Forest-tinted — pulled back significantly */
         forest:
-          "0 8px 32px rgba(52,103,57,0.26), 0 2px 8px rgba(52,103,57,0.16)",
+          "0 4px 14px rgba(52,103,57,0.18), 0 1px 4px rgba(52,103,57,0.10)",
         "forest-sm":
-          "0 4px 16px rgba(52,103,57,0.22), 0 1px 4px rgba(52,103,57,0.12)",
+          "0 2px 8px rgba(52,103,57,0.14), 0 1px 2px rgba(52,103,57,0.08)",
+        /* Pickup dark card */
         pickup:
-          "0 16px 48px rgba(0,0,0,0.40), 0 4px 12px rgba(0,0,0,0.30)",
+          "0 12px 36px rgba(0,0,0,0.35), 0 3px 10px rgba(0,0,0,0.20)",
       },
       backgroundImage: {
-        "grain": `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+        grain: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
       },
       keyframes: {
         "fade-up": {
