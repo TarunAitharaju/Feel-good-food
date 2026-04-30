@@ -6,14 +6,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        // primary palette via CSS vars
-        hero: "var(--hero-bg)",
         orange: {
           DEFAULT: "#E8601C",
           hover:   "#C44E14",
           light:   "#FFF0E8",
         },
-        // keep old names so components don't break
         forest: {
           DEFAULT: "#2C4A35",
           mid:     "#3D6B52",
@@ -51,14 +48,13 @@ export default {
         "card-xl": "32px",
       },
       boxShadow: {
+        card:       "0 2px 12px rgba(0,0,0,0.07)",
+        "card-lg":  "0 8px 32px rgba(0,0,0,0.10)",
         glass:      "0 2px 8px rgba(0,0,0,0.08)",
         "glass-md": "0 4px 16px rgba(0,0,0,0.10)",
         "glass-lg": "0 8px 32px rgba(0,0,0,0.12)",
-        "glass-xl": "0 16px 48px rgba(0,0,0,0.16)",
         forest:     "0 4px 16px rgba(44,74,53,0.30)",
         "forest-sm":"0 2px 8px rgba(44,74,53,0.22)",
-        card:       "0 2px 12px rgba(0,0,0,0.08)",
-        "card-lg":  "0 8px 32px rgba(0,0,0,0.12)",
         orange:     "0 4px 16px rgba(232,96,28,0.35)",
         "orange-sm":"0 2px 8px rgba(232,96,28,0.25)",
         pickup:     "0 12px 40px rgba(0,0,0,0.40)",

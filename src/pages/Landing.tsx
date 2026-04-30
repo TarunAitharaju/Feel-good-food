@@ -9,8 +9,7 @@ export function LandingPage() {
   return (
     <>
       <Hero />
-      {/* All sections below are white */}
-      <div style={{ background: "var(--page-bg)" }}>
+      <div className="bg-white">
         <HowItWorks />
         <WeeklyMenu />
         <PricingSection />
