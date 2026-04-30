@@ -1,48 +1,85 @@
 import { Link } from "react-router-dom";
 
+// Free-to-use food image — swap with your own later
+const HERO_IMAGE =
+  "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=1600&q=80";
+
 export function Hero() {
   return (
-    <section className="relative flex min-h-[520px] items-center justify-center overflow-hidden px-5 pb-16 pt-20 md:px-10">
-      {/* Background gradient wash */}
+    <section
+      className="relative flex min-h-[600px] items-center justify-center overflow-hidden px-5 pb-20 pt-16 md:px-10"
+    >
+      {/* Dark green base */}
+      <div
+        className="absolute inset-0"
+        style={{ background: "var(--hero-bg)" }}
+      />
+
+      {/* Food background image with overlay */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `url(${HERO_IMAGE})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          opacity: 0.18,
+        }}
+      />
+
+      {/* Gradient overlay — darkens edges, keeps center readable */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(135deg, rgba(61,89,38,0.10) 0%, rgba(252,143,0,0.06) 40%, rgba(138,171,110,0.08) 100%)",
+            "radial-gradient(ellipse 80% 80% at 50% 50%, rgba(26,56,40,0.40) 0%, rgba(26,56,40,0.85) 100%)",
         }}
       />
-      {/* Grain overlay */}
-      <div className="absolute inset-0 bg-grain opacity-[0.035] pointer-events-none" />
 
-      {/* Glass content panel */}
-      <div className="glass grain relative z-10 mx-auto max-w-[640px] rounded-card-lg px-8 py-12 text-center shadow-glass-lg md:px-11">
-        <h1 className="font-display text-ink text-depth mb-4 text-[clamp(2.2rem,5vw,3.5rem)] font-light italic leading-[1.1] tracking-tight">
+      {/* Frosted glass content card */}
+      <div className="glass-card relative z-10 mx-auto w-full max-w-[600px] rounded-card-xl px-8 py-12 text-center md:px-12">
+        <p
+          className="mb-3 text-xs font-bold uppercase tracking-widest"
+          style={{ color: "var(--orange)" }}
+        >
+          Richardson, TX · Andhra Home Food
+        </p>
+
+        <h1
+          className="mb-5 text-[clamp(2.4rem,5vw,3.6rem)] font-bold leading-[1.1] tracking-tight text-white"
+          style={{ fontFamily: "Poppins, sans-serif" }}
+        >
           Home food,
           <br />
-          <span className="text-forest">made simple.</span>
+          made simple.
         </h1>
 
-        <p className="text-ink-dim text-depth-light mx-auto mb-7 max-w-[460px] text-lg leading-relaxed">
-          Daily home-cooked Andhra meals from a curated network of home cooks in
-          Richardson, TX. Subscribe weekly — we handle the rest.
+        <p
+          className="mx-auto mb-8 max-w-[440px] text-base leading-relaxed"
+          style={{ color: "rgba(255,255,255,0.70)" }}
+        >
+          Daily home-cooked Andhra meals from a curated network of home cooks
+          in Richardson, TX. Subscribe weekly — we handle the rest.
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-3">
           <Link
             to="/subscribe"
-            className="rounded-full bg-forest px-8 py-3.5 text-base font-semibold text-white shadow-forest-sm transition-ambient hover:shadow-forest"
+            className="btn-orange rounded-full px-8 py-3.5 text-base font-semibold"
           >
             Join the waitlist →
           </Link>
           <Link
             to="/menu"
-            className="rounded-full border-[1.5px] border-forest/25 bg-transparent px-8 py-3.5 text-base font-semibold text-forest transition-ambient hover:border-forest/40 hover:bg-forest/5"
+            className="btn-ghost-white rounded-full px-8 py-3.5 text-base font-semibold"
           >
             Browse this week's menu
           </Link>
         </div>
 
-        <p className="text-ink-muted mt-5 text-[0.8125rem]">
+        <p
+          className="mt-6 text-[0.8125rem]"
+          style={{ color: "rgba(255,255,255,0.40)" }}
+        >
           127 families signed up in Richardson · Starting at $65/week
         </p>
       </div>

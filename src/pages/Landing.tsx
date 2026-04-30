@@ -9,11 +9,14 @@ export function LandingPage() {
   return (
     <>
       <Hero />
-      <HowItWorks />
-      <WeeklyMenu />
-      <PricingSection />
-      <WaitlistSignup />
-      <Footer />
+      {/* All sections below are white */}
+      <div style={{ background: "var(--page-bg)" }}>
+        <HowItWorks />
+        <WeeklyMenu />
+        <PricingSection />
+        <WaitlistSignup />
+        <Footer />
+      </div>
     </>
   );
 }

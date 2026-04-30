@@ -61,6 +61,7 @@ export function WaitlistSignup() {
             placeholder="75080"
             value={zip}
             onChange={(e) => setZip(e.target.value)}
+            style={{ background: "var(--page-bg-alt)", color: "var(--ink)" }}
             className="w-full rounded-xl border-[1.5px] border-forest/15 bg-cream/55 px-4 py-3 text-[0.9375rem] text-ink outline-none transition-ambient placeholder:text-ink-muted focus:border-forest/40 focus:ring-2 focus:ring-forest/10"
           />
         </div>
@@ -68,7 +69,7 @@ export function WaitlistSignup() {
         {/* Submit */}
         <button
           onClick={handleSubmit}
-          className="rounded-full bg-forest px-5 py-3.5 text-base font-semibold text-white shadow-forest transition-ambient hover:shadow-[0_12px_40px_rgba(61,89,38,0.32)]"
+          className="btn-orange rounded-full px-5 py-3.5 text-base font-semibold text-white shadow-forest transition-ambient hover:shadow-[0_12px_40px_rgba(61,89,38,0.32)]"
         >
           Join the waitlist →
         </button>

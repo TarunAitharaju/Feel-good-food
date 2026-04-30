@@ -7,42 +7,63 @@ function PricingCard({ tier, price, meals, features, featured }: PricingTier) {
   return (
     <div
       className={cn(
-        "glass flex w-[240px] flex-col gap-3 rounded-card-lg px-5 py-7 transition-ambient hover:scale-[1.03]",
+        "flex w-[240px] flex-col gap-3 rounded-card-lg px-5 py-7 transition-ambient hover:scale-[1.02]",
         featured
-          ? "border-[1.5px] border-forest shadow-[0_0_0_3px_rgba(61,89,38,0.12),0_8px_32px_rgba(61,89,38,0.18),0_2px_8px_rgba(31,26,21,0.08)]"
-          : "border border-forest/12 shadow-glass-md"
+          ? "shadow-card-lg"
+          : "shadow-card"
       )}
+      style={{
+        background: "var(--card-bg)",
+        border: featured
+          ? "2px solid var(--orange)"
+          : "1px solid var(--card-border)",
+      }}
     >
       {/* Header */}
       <div className="flex items-center justify-between">
-        <span className="text-ink-muted text-xs font-bold uppercase tracking-widest">
+        <span className="text-xs font-bold uppercase tracking-widest"
+              style={{ color: "var(--ink-muted)" }}>
           {tier}
         </span>
         {featured && (
-          <span className="rounded-full bg-forest px-2.5 py-0.5 text-[0.6875rem] font-bold tracking-wide text-white">
+          <span
+            className="rounded-full px-2.5 py-0.5 text-[0.6875rem] font-bold tracking-wide text-white"
+            style={{ background: "var(--orange)" }}
+          >
             Popular
           </span>
         )}
       </div>
 
       {/* Price */}
-      <div className="font-display text-ink text-4xl font-medium leading-none">
+      <div className="font-display text-4xl font-bold leading-none"
+           style={{ color: "var(--ink)" }}>
         ${price}
-        <span className="text-ink-dim text-sm font-normal"> / week</span>
+        <span className="text-sm font-normal" style={{ color: "var(--ink-dim)" }}>
+          {" "}/ week
+        </span>
       </div>
 
-      <p className="text-ink-dim text-[0.8125rem]">{meals}</p>
+      <p className="text-[0.8125rem]" style={{ color: "var(--ink-dim)" }}>
+        {meals}
+      </p>
 
       {/* Divider */}
-      <div className="h-px bg-forest/10" />
+      <div className="h-px" style={{ background: "var(--card-border)" }} />
 
       {/* Features */}
       {features.map((feature) => (
         <div
           key={feature}
-          className="text-ink-dim flex items-start gap-1.5 text-[0.8125rem]"
+          className="flex items-start gap-1.5 text-[0.8125rem]"
+          style={{ color: "var(--ink-dim)" }}
         >
-          <Check size={14} className="mt-0.5 shrink-0 text-forest" strokeWidth={2.5} />
+          <Check
+            size={14}
+            className="mt-0.5 shrink-0"
+            style={{ color: "var(--orange)" }}
+            strokeWidth={2.5}
+          />
           {feature}
         </div>
       ))}
@@ -52,10 +73,13 @@ function PricingCard({ tier, price, meals, features, featured }: PricingTier) {
         to="/subscribe"
         className={cn(
           "mt-2 rounded-full py-3 text-center text-[0.9rem] font-semibold transition-ambient",
-          featured
-            ? "bg-forest text-white shadow-forest-sm hover:shadow-forest"
-            : "border-[1.5px] border-forest bg-transparent text-forest hover:bg-forest/5"
+          featured ? "btn-orange" : "border-[1.5px] bg-transparent hover:opacity-80"
         )}
+        style={
+          featured
+            ? {}
+            : { borderColor: "var(--hero-bg)", color: "var(--hero-bg)" }
+        }
       >
         Select plan
       </Link>
@@ -65,12 +89,21 @@ function PricingCard({ tier, price, meals, features, featured }: PricingTier) {
 
 export function PricingSection() {
   return (
-    <section className="mx-auto max-w-[900px] px-5 py-16 md:px-10">
+    <section
+      className="mx-auto max-w-[900px] px-5 py-16 md:px-10"
+      style={{ background: "var(--page-bg)" }}
+    >
       <div className="mb-10 text-center">
-        <span className="text-ink-muted mb-2 block text-xs font-bold uppercase tracking-widest">
+        <span
+          className="mb-2 block text-xs font-bold uppercase tracking-widest"
+          style={{ color: "var(--orange)" }}
+        >
           Pricing
         </span>
-        <h2 className="font-display text-ink text-3xl font-normal">
+        <h2
+          className="font-display text-3xl font-bold"
+          style={{ color: "var(--ink)" }}
+        >
           Simple weekly plans
         </h2>
       </div>
