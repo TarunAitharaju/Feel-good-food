@@ -7,24 +7,29 @@ export default {
     extend: {
       colors: {
         cream: {
-          DEFAULT: "#F2EDC2",
-          light: "#faf6dc",
-          dark: "#e6dfa6",
+          DEFAULT: "#FDEDD6",
+          light: "#FFF6E8",
+          dark: "#F5DDB8",
         },
         forest: {
-          DEFAULT: "#346739",
-          mid: "#629a58",
-          light: "#9FCB98",
-          deep: "#2c5731",
+          DEFAULT: "#3D5926",
+          mid: "#5A7A3D",
+          light: "#8AAB6E",
+          deep: "#2E4319",
         },
         terra: {
-          DEFAULT: "#b5380c",
-          dark: "#8a2a08",
-          lifted: "#d4623a",
+          DEFAULT: "#AE150D",
+          dark: "#8A100A",
+          lifted: "#D44A2A",
         },
         gold: {
-          DEFAULT: "#c89b3c",
-          light: "#d9b05a",
+          DEFAULT: "#FDD365",
+          light: "#FEEABC",
+        },
+        orange: {
+          DEFAULT: "#FC8F00",
+          dark: "#D47800",
+          light: "#FDAA40",
         },
         ink: {
           DEFAULT: "#1f1a15",
@@ -32,7 +37,7 @@ export default {
           muted: "#9e8e7a",
         },
         surface: {
-          dark: "#1a201a",
+          dark: "#1a1612",
         },
       },
       fontFamily: {
@@ -57,9 +62,9 @@ export default {
           "0 8px 24px rgba(31,26,21,0.10), 0 2px 6px rgba(31,26,21,0.06)",
         /* Forest-tinted — pulled back significantly */
         forest:
-          "0 4px 14px rgba(52,103,57,0.18), 0 1px 4px rgba(52,103,57,0.10)",
+          "0 4px 14px rgba(61,89,38,0.18), 0 1px 4px rgba(61,89,38,0.10)",
         "forest-sm":
-          "0 2px 8px rgba(52,103,57,0.14), 0 1px 2px rgba(52,103,57,0.08)",
+          "0 2px 8px rgba(61,89,38,0.14), 0 1px 2px rgba(61,89,38,0.08)",
         /* Pickup dark card */
         pickup:
           "0 12px 36px rgba(0,0,0,0.35), 0 3px 10px rgba(0,0,0,0.20)",

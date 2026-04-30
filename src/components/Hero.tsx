@@ -8,7 +8,7 @@ export function Hero() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(135deg, rgba(52,103,57,0.10) 0%, rgba(200,155,60,0.06) 40%, rgba(121,174,111,0.08) 100%)",
+            "linear-gradient(135deg, rgba(61,89,38,0.10) 0%, rgba(252,143,0,0.06) 40%, rgba(138,171,110,0.08) 100%)",
         }}
       />
       {/* Grain overlay */}
@@ -30,7 +30,7 @@ export function Hero() {
         <div className="flex flex-wrap items-center justify-center gap-3">
           <Link
             to="/subscribe"
-            className="rounded-full bg-forest px-8 py-3.5 text-base font-semibold text-white shadow-forest transition-ambient hover:shadow-[0_12px_40px_rgba(52,103,57,0.32)]"
+            className="rounded-full bg-forest px-8 py-3.5 text-base font-semibold text-white shadow-forest transition-ambient hover:shadow-[0_12px_40px_rgba(61,89,38,0.32)]"
           >
             Join the waitlist →
           </Link>

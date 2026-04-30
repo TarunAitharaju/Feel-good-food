@@ -68,7 +68,7 @@ export function WaitlistSignup() {
         {/* Submit */}
         <button
           onClick={handleSubmit}
-          className="rounded-full bg-forest px-5 py-3.5 text-base font-semibold text-white shadow-forest transition-ambient hover:shadow-[0_12px_40px_rgba(52,103,57,0.32)]"
+          className="rounded-full bg-forest px-5 py-3.5 text-base font-semibold text-white shadow-forest transition-ambient hover:shadow-[0_12px_40px_rgba(61,89,38,0.32)]"
         >
           Join the waitlist →
         </button>
