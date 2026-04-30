@@ -5,26 +5,27 @@
 /* ─── Google Fonts ─── */
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=DM+Sans:wght@400;500;600;700&family=Tiro+Telugu&display=swap");
 
-/* ─── Design Tokens ─── */
+/* ─── Design Tokens (Caprese palette) ─── */
 :root {
-  --cream: #f2edc2;
-  --cream-light: #faf6dc;
-  --cream-dark: #e6dfa6;
-  --forest: #346739;
-  --forest-mid: #629a58;
-  --forest-light: #9fcb98;
-  --forest-deep: #2c5731;
-  --gold: #c89b3c;
-  --gold-light: #d9b05a;
-  --terra: #b5380c;
+  --cream: #FDEDD6;
+  --cream-light: #FFF6E8;
+  --cream-dark: #F5DDB8;
+  --forest: #3D5926;
+  --forest-mid: #5A7A3D;
+  --forest-light: #8AAB6E;
+  --forest-deep: #2E4319;
+  --gold: #FDD365;
+  --gold-light: #FEEABC;
+  --orange: #FC8F00;
+  --terra: #AE150D;
   --ink: #1f1a15;
   --ink-dim: #6b5e50;
   --ink-muted: #9e8e7a;
 
-  /* Glass surfaces — tighter blur */
-  --glass-bg: rgba(242, 237, 194, 0.58);
+  /* Glass surfaces — warm ivory glass */
+  --glass-bg: rgba(253, 237, 214, 0.58);
   --glass-blur: 12px;
-  --glass-border: rgba(52, 103, 57, 0.10);
+  --glass-border: rgba(61, 89, 38, 0.10);
 
   /* Radii */
   --radius-card: 20px;
@@ -34,20 +35,21 @@
 }
 
 .dark {
-  --cream: #1a201a;
-  --cream-light: #1e261e;
-  --cream-dark: #151a15;
-  --ink: #f2edc2;
-  --ink-dim: #e6dfa6;
+  --cream: #1a1612;
+  --cream-light: #211c17;
+  --cream-dark: #15110d;
+  --ink: #FDEDD6;
+  --ink-dim: #F5DDB8;
   --ink-muted: #9e8e7a;
-  --forest: #79ae6f;
-  --forest-mid: #9fcb98;
-  --gold: #d4a94a;
-  --terra: #d4623a;
+  --forest: #6E9E5A;
+  --forest-mid: #8AAB6E;
+  --gold: #FDD365;
+  --orange: #FDAA40;
+  --terra: #D44A2A;
 
-  --glass-bg: rgba(26, 32, 26, 0.85);
+  --glass-bg: rgba(26, 22, 18, 0.85);
   --glass-blur: 14px;
-  --glass-border: rgba(245, 240, 208, 0.06);
+  --glass-border: rgba(253, 237, 214, 0.06);
 }
 
 /* ─── Base ─── */
@@ -80,17 +82,17 @@ body::before {
   pointer-events: none;
   background: radial-gradient(
       ellipse 80% 60% at 15% 10%,
-      rgba(52, 103, 57, 0.08) 0%,
+      rgba(61, 89, 38, 0.08) 0%,
       transparent 60%
     ),
     radial-gradient(
       ellipse 60% 50% at 85% 85%,
-      rgba(121, 174, 111, 0.1) 0%,
+      rgba(138, 171, 110, 0.1) 0%,
       transparent 55%
     ),
     radial-gradient(
       ellipse 50% 40% at 50% 50%,
-      rgba(200, 155, 60, 0.04) 0%,
+      rgba(252, 143, 0, 0.04) 0%,
       transparent 60%
     );
 }
@@ -98,17 +100,17 @@ body::before {
 .dark body::before {
   background: radial-gradient(
       ellipse 80% 60% at 15% 10%,
-      rgba(52, 103, 57, 0.12) 0%,
+      rgba(61, 89, 38, 0.12) 0%,
       transparent 60%
     ),
     radial-gradient(
       ellipse 60% 50% at 85% 85%,
-      rgba(79, 130, 70, 0.08) 0%,
+      rgba(110, 158, 90, 0.08) 0%,
       transparent 55%
     ),
     radial-gradient(
       ellipse 50% 40% at 50% 50%,
-      rgba(200, 155, 60, 0.06) 0%,
+      rgba(252, 143, 0, 0.06) 0%,
       transparent 60%
     );
 }
@@ -134,15 +136,15 @@ body::after {
   }
 
   .glass-heavy {
-    background: rgba(242, 237, 194, 0.72);
+    background: rgba(253, 237, 214, 0.72);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(52, 103, 57, 0.08);
+    border: 1px solid rgba(61, 89, 38, 0.08);
   }
 
   .dark .glass-heavy {
-    background: rgba(26, 32, 26, 0.90);
-    border: 1px solid rgba(245, 240, 208, 0.05);
+    background: rgba(26, 22, 18, 0.90);
+    border: 1px solid rgba(253, 237, 214, 0.05);
   }
 
   .glass-dark {

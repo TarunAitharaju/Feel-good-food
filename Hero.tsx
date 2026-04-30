@@ -8,7 +8,7 @@ export function Hero() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(135deg, rgba(52,103,57,0.10) 0%, rgba(200,155,60,0.06) 40%, rgba(121,174,111,0.08) 100%)",
+            "linear-gradient(135deg, rgba(61,89,38,0.10) 0%, rgba(252,143,0,0.06) 40%, rgba(138,171,110,0.08) 100%)",
         }}
       />
       {/* Grain overlay */}

@@ -9,7 +9,7 @@ function PricingCard({ tier, price, meals, features, featured }: PricingTier) {
       className={cn(
         "glass flex w-[240px] flex-col gap-3 rounded-card-lg px-5 py-7 transition-ambient hover:scale-[1.03]",
         featured
-          ? "border-[1.5px] border-forest shadow-[0_0_0_3px_rgba(52,103,57,0.12),0_8px_32px_rgba(52,103,57,0.18),0_2px_8px_rgba(31,26,21,0.08)]"
+          ? "border-[1.5px] border-forest shadow-[0_0_0_3px_rgba(61,89,38,0.12),0_8px_32px_rgba(61,89,38,0.18),0_2px_8px_rgba(31,26,21,0.08)]"
           : "border border-forest/12 shadow-glass-md"
       )}
     >
