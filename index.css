@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Google Fonts ─── */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=DM+Sans:wght@400;500;600;700&family=Tiro+Telugu&display=swap");
+
+/* ─── Design Tokens ─── */
+:root {
+  --cream: #f2edc2;
+  --cream-light: #faf6dc;
+  --cream-dark: #e6dfa6;
+  --forest: #346739;
+  --forest-mid: #629a58;
+  --forest-light: #9fcb98;
+  --forest-deep: #2c5731;
+  --gold: #c89b3c;
+  --gold-light: #d9b05a;
+  --terra: #b5380c;
+  --ink: #1f1a15;
+  --ink-dim: #6b5e50;
+  --ink-muted: #9e8e7a;
+
+  /* Glass surfaces — tighter blur */
+  --glass-bg: rgba(242, 237, 194, 0.58);
+  --glass-blur: 12px;
+  --glass-border: rgba(52, 103, 57, 0.10);
+
+  /* Radii */
+  --radius-card: 20px;
+  --radius-card-lg: 28px;
+  --radius-card-xl: 32px;
+  --radius-pill: 9999px;
+}
+
+.dark {
+  --cream: #1a201a;
+  --cream-light: #1e261e;
+  --cream-dark: #151a15;
+  --ink: #f2edc2;
+  --ink-dim: #e6dfa6;
+  --ink-muted: #9e8e7a;
+  --forest: #79ae6f;
+  --forest-mid: #9fcb98;
+  --gold: #d4a94a;
+  --terra: #d4623a;
+
+  --glass-bg: rgba(26, 32, 26, 0.85);
+  --glass-blur: 14px;
+  --glass-border: rgba(245, 240, 208, 0.06);
+}
+
+/* ─── Base ─── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "DM Sans", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--cream-light);
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ─── Ambient Background Gradients ─── */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background: radial-gradient(
+      ellipse 80% 60% at 15% 10%,
+      rgba(52, 103, 57, 0.08) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 60% 50% at 85% 85%,
+      rgba(121, 174, 111, 0.1) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 50% 40% at 50% 50%,
+      rgba(200, 155, 60, 0.04) 0%,
+      transparent 60%
+    );
+}
+
+.dark body::before {
+  background: radial-gradient(
+      ellipse 80% 60% at 15% 10%,
+      rgba(52, 103, 57, 0.12) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 60% 50% at 85% 85%,
+      rgba(79, 130, 70, 0.08) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 50% 40% at 50% 50%,
+      rgba(200, 155, 60, 0.06) 0%,
+      transparent 60%
+    );
+}
+
+/* ─── Film Grain Noise Overlay ─── */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.035;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ─── Utility Classes ─── */
+@layer utilities {
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+  }
+
+  .glass-heavy {
+    background: rgba(242, 237, 194, 0.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(52, 103, 57, 0.08);
+  }
+
+  .dark .glass-heavy {
+    background: rgba(26, 32, 26, 0.90);
+    border: 1px solid rgba(245, 240, 208, 0.05);
+  }
+
+  .glass-dark {
+    background: rgba(26, 22, 18, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(250, 243, 224, 0.08);
+  }
+
+  .grain {
+    position: relative;
+  }
+
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    pointer-events: none;
+    border-radius: inherit;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .edge-fade-bottom {
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+
+  /* Text depth — subtle shadow that gives type a pressed/inked feel */
+  .text-depth {
+    text-shadow: 0 1px 2px rgba(31, 26, 21, 0.12);
+  }
+
+  .text-depth-light {
+    text-shadow: 0 1px 1px rgba(31, 26, 21, 0.08);
+  }
+
+  .text-ink {
+    color: var(--ink);
+  }
+  .text-ink-dim {
+    color: var(--ink-dim);
+  }
+  .text-ink-muted {
+    color: var(--ink-muted);
+  }
+  .text-forest {
+    color: var(--forest);
+  }
+  .text-gold {
+    color: var(--gold);
+  }
+  .text-terra {
+    color: var(--terra);
+  }
+  .bg-cream {
+    background-color: var(--cream);
+  }
+  .bg-cream-light {
+    background-color: var(--cream-light);
+  }
+  .border-glass {
+    border-color: var(--glass-border);
+  }
+}
+
+/* ─── Transitions ─── */
+.transition-ambient {
+  transition: all 200ms ease;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ink-muted);
+  border-radius: 9999px;
+}
