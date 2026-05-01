@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ─── Base ─── */
 @layer base {
-
   *,
   *::before,
   *::after {
@@ -18,136 +16,122 @@
   }
 
   body {
-    font-family: "Poppins", system-ui, sans-serif;
-    color: #1a1a1a;
-    background: #ffffff;
+    font-family: "DM Sans", system-ui, sans-serif;
+    background: linear-gradient(to bottom, #0a1a14, #121212);
+    color: #faf3e0;
     min-height: 100vh;
+  }
+
+  ::selection {
+    background: #d4623a;
+    color: #ffffff;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
   }
 }
 
-/* ─── Component Classes ─── */
 @layer components {
-  /* Hero background — single element, no stacking divs */
-
-  .nav {
-    background: linear-gradient(135deg, #56625c, #1a3828, #07180f);
-  }
-
-  .hero-bg {
-    background: linear-gradient(135deg, #07180f, #1a3828, #56625c);
-    /* background-image:
-      linear-gradient(to bottom, rgba(26, 56, 40, 0.40), rgba(26, 56, 40, 0.85)),
-      url("https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=1600&q=80"); */
-    background-size: cover;
-    background-position: center;
-  }
-
-  /* Frosted glass card — white-tinted blur on dark bg */
+  /* ── Glass card — very subtle, for use on dark backgrounds ── */
   .glass-card {
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(28px);
-    -webkit-backdrop-filter: blur(28px);
-    border: 1px solid rgba(255, 255, 255, 0.20);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
-  /* Glass for generic dark sections */
-  .glass {
+  .glass-card-md {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+  }
+
+  .glass-card-hover {
     background: rgba(255, 255, 255, 0.10);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.15);
   }
 
-  .glass-heavy {
-    background: rgba(255, 255, 255, 0.16);
-    backdrop-filter: blur(32px);
-    -webkit-backdrop-filter: blur(32px);
-    border: 1px solid rgba(255, 255, 255, 0.20);
-  }
-
-  .glass-dark {
-    background: rgba(26, 56, 40, 0.92);
+  /* ── Nav glass pill ── */
+  .nav-pill {
+    background: rgba(255, 255, 255, 0.02);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.10);
   }
 
-  /* Orange CTA button */
-  .btn-orange {
-    background-color: #e8601c;
+  /* ── Terracotta CTA button ── */
+  .btn-primary {
+    background: linear-gradient(to right, #d4623a, #e27c5a);
     color: #ffffff;
-    box-shadow: none;
-    transition: background-color 200ms ease;
+    box-shadow: 0 4px 24px rgba(212, 98, 58, 0.35);
+    transition: all 300ms ease;
   }
 
-  .btn-orange:hover {
-    background-color: #c44e14;
+  .btn-primary:hover {
+    background: linear-gradient(to right, #b5380c, #d4623a);
+    box-shadow: 0 8px 32px rgba(212, 98, 58, 0.45);
+    transform: scale(1.02);
   }
 
-  /* Ghost button on dark backgrounds */
-  .btn-ghost-white {
-    background: transparent;
-    color: #ffffff;
-    border: 1.5px solid rgba(255, 255, 255, 0.50);
-    transition: all 200ms ease;
+  /* ── Ghost button on dark bg ── */
+  .btn-ghost {
+    background: rgba(255, 255, 255, 0.03);
+    color: #faf3e0;
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    backdrop-filter: blur(8px);
+    transition: all 300ms ease;
   }
 
-  .btn-ghost-white:hover {
+  .btn-ghost:hover {
     background: rgba(255, 255, 255, 0.10);
-    border-color: rgba(255, 255, 255, 0.80);
+  }
+
+  /* ── Text shadow for hero headings ── */
+  .text-shadow-hero {
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  }
+
+  /* ── Glow blobs ── */
+  .glow-forest {
+    background: rgba(31, 94, 58, 0.20);
+    border-radius: 50%;
+    filter: blur(120px);
+    pointer-events: none;
+  }
+
+  .glow-terra {
+    background: rgba(212, 98, 58, 0.10);
+    border-radius: 50%;
+    filter: blur(150px);
+    pointer-events: none;
   }
 }
 
-/* ─── Utility overrides ─── */
 @layer utilities {
-  .text-ink {
-    color: #1a1a1a;
-  }
+  .text-cream        { color: #faf3e0; }
+  .text-cream-dim    { color: rgba(250, 243, 224, 0.60); }
+  .text-cream-muted  { color: rgba(250, 243, 224, 0.40); }
+  .text-terracotta   { color: #d4623a; }
+  .text-gold         { color: #d4a94a; }
+  .text-forest-light { color: #1f5e3a; }
 
-  .text-ink-dim {
-    color: #555550;
-  }
+  /* keep old aliases working */
+  .text-ink       { color: #faf3e0; }
+  .text-ink-dim   { color: rgba(250, 243, 224, 0.60); }
+  .text-ink-muted { color: rgba(250, 243, 224, 0.40); }
+  .text-forest    { color: #1f5e3a; }
+  .text-orange    { color: #d4623a; }
+  .text-terra     { color: #d4623a; }
 
-  .text-ink-muted {
-    color: #9a9a90;
-  }
-
-  .text-forest {
-    color: #2c4a35;
-  }
-
-  .text-orange {
-    color: #e8601c;
-  }
-
-  .text-terra {
-    color: #e8601c;
-  }
-
-  .bg-forest {
-    background-color: #2c4a35;
-  }
-
-  .bg-cream-light {
-    background-color: #ffffff;
-  }
+  .bg-page        { background: linear-gradient(to bottom, #0a1a14, #121212); }
+  .bg-forest      { background-color: #0a1a14; }
+  .bg-cream-light { background-color: #faf3e0; }
 }
 
-/* ─── Transition helper ─── */
 .transition-ambient {
   transition: all 200ms ease;
-}
-
-/* ─── Scrollbar ─── */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #2c4a35;
-  border-radius: 9999px;
 }

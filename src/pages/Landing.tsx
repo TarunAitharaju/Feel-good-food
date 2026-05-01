@@ -9,13 +9,11 @@ export function LandingPage() {
   return (
     <>
       <Hero />
-      <div className="bg-white">
-        <HowItWorks />
-        <WeeklyMenu />
-        <PricingSection />
-        <WaitlistSignup />
-        <Footer />
-      </div>
+      <HowItWorks />
+      <WeeklyMenu />
+      <PricingSection />
+      <WaitlistSignup />
+      <Footer />
     </>
   );
 }
