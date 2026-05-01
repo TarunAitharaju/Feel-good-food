@@ -6,58 +6,60 @@ export default {
   theme: {
     extend: {
       colors: {
-        orange: {
-          DEFAULT: "#E8601C",
-          hover:   "#C44E14",
-          light:   "#FFF0E8",
-        },
-        forest: {
-          DEFAULT: "#2C4A35",
-          mid:     "#3D6B52",
-          light:   "#5A8A6E",
-          deep:    "#1A3828",
-        },
-        terra: {
-          DEFAULT: "#E8601C",
-          dark:    "#C44E14",
-          lifted:  "#F07840",
+        terracotta: {
+          DEFAULT: "#d4623a",
+          dark:    "#b5380c",
+          light:   "#e27c5a",
         },
         gold: {
-          DEFAULT: "#F8C740",
-          light:   "#FDE89A",
+          DEFAULT: "#d4a94a",
+          light:   "#e8c97a",
+          dim:     "#a07c28",
+        },
+        forest: {
+          DEFAULT: "#0a1a14",
+          light:   "#1f5e3a",
+          mid:     "#16452a",
+        },
+        charcoal: {
+          DEFAULT: "#121212",
+          light:   "#1a1612",
         },
         cream: {
-          DEFAULT: "#FFFFFF",
-          light:   "#FFFFFF",
-          dark:    "#F5F5F3",
+          DEFAULT: "#faf3e0",
+          dim:     "rgba(250,243,224,0.6)",
+          muted:   "rgba(250,243,224,0.4)",
         },
+        // keep for any lingering references
         ink: {
-          DEFAULT: "#1A1A1A",
-          dim:     "#555550",
-          muted:   "#9A9A90",
+          DEFAULT: "#faf3e0",
+          dim:     "rgba(250,243,224,0.6)",
+          muted:   "rgba(250,243,224,0.4)",
+        },
+        orange: {
+          DEFAULT: "#d4623a",
         },
       },
       fontFamily: {
-        display: ["Poppins", "system-ui", "sans-serif"],
-        body:    ["Poppins", "system-ui", "sans-serif"],
+        display: ["Fraunces", "Georgia", "serif"],
+        body:    ["DM Sans", "system-ui", "sans-serif"],
         telugu:  ["Tiro Telugu", "serif"],
+        sans:    ["DM Sans", "system-ui", "sans-serif"],
+        serif:   ["Fraunces", "Georgia", "serif"],
       },
       borderRadius: {
         card:      "16px",
-        "card-lg": "24px",
-        "card-xl": "32px",
+        "card-lg": "20px",
+        "card-xl": "24px",
       },
       boxShadow: {
-        card:       "0 2px 12px rgba(0,0,0,0.07)",
-        "card-lg":  "0 8px 32px rgba(0,0,0,0.10)",
-        glass:      "0 2px 8px rgba(0,0,0,0.08)",
-        "glass-md": "0 4px 16px rgba(0,0,0,0.10)",
-        "glass-lg": "0 8px 32px rgba(0,0,0,0.12)",
-        forest:     "0 4px 16px rgba(44,74,53,0.30)",
-        "forest-sm":"0 2px 8px rgba(44,74,53,0.22)",
-        orange:     "0 4px 16px rgba(232,96,28,0.35)",
-        "orange-sm":"0 2px 8px rgba(232,96,28,0.25)",
-        pickup:     "0 12px 40px rgba(0,0,0,0.40)",
+        glass:        "0 8px 30px rgba(0,0,0,0.3)",
+        "glass-lg":   "0 20px 50px rgba(0,0,0,0.5)",
+        terracotta:   "0 4px 24px rgba(212,98,58,0.35)",
+        "terracotta-lg": "0 8px 32px rgba(212,98,58,0.45)",
+      },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
     },
   },
